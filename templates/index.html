@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malhadeira — Reconhecimento de Peixes</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <header class="app-header">
+            <h1>Malhadeira <span class="badge">AI</span></h1>
+            <p>Faça o upload da imagem para identificar a espécie do peixe automaticamente.</p>
+        </header>
+
+        <section class="upload-section">
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                    </svg>
+                    <p class="main-text">Arrastar e soltar a foto do peixe aqui</p>
+                    <p class="or-text">ou</p>
+                    <label for="file-input" class="btn-select">Selecionar Arquivo</label>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                </div>
+                <img id="image-preview" class="image-preview hidden" src="#" alt="Preview do peixe">
+            </div>
+        </section>
+
+        <div id="loading-state" class="loading-state hidden">
+            <div class="spinner"></div>
+            <p>Analisando estruturas e padrões da imagem...</p>
+        </div>
+
+        <section id="result-section" class="result-section hidden">
+            <div class="result-card">
+                <h2>Resultado da Análise</h2>
+                <hr class="divider">
+                
+                <div class="result-grid">
+                    <div class="result-media">
+                        <p class="label">Imagem Processada:</p>
+                        <img id="result-image" src="#" alt="Deteção YOLO">
+                    </div>
+                    
+                    <div class="result-data">
+                        <p class="label">Espécie Identificada:</p>
+                        <h3 id="fish-name">Buscando...</h3>
+                        
+                        <p class="label">Grau de Confiança:</p>
+                        <div class="confidence-container">
+                            <div class="confidence-bar-bg">
+                                <div id="confidence-bar" class="confidence-bar" style="width: 0%;"></div>
+                            </div>
+                            <span id="confidence-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btn-reset" class="btn-secondary">Identificar Nova Imagem</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
