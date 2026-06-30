@@ -52,22 +52,18 @@ async def predict_fish(file: UploadFile = File(...)):
     Endpoint que recebe a imagem do peixe enviada pelo JavaScript (Front-end),
     passa pelo YOLO e retorna o resultado em formato JSON.
     """
-    # Validação do tipo de ficheiro
     if not file.content_type.startswith("image/"):
         raise HTTPException(status_code=400, detail="O arquivo enviado precisa ser uma imagem válida.")
 
     try:
-        # Ler os bytes da imagem enviada pelo utilizador
         image_bytes = await file.read()
         
-        # Converter para o formato que a biblioteca PIL e o YOLO entendem
         image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
         
-        # Executar a inferência do YOLO
         results = model.predict(source=image, conf=0.25)
         result = results[0]
         
-        # Estruturar o array de deteções
+
         detections = []
         for box in result.boxes:
             class_id = int(box.cls[0])
@@ -86,8 +82,6 @@ async def predict_fish(file: UploadFile = File(...)):
                 }
             })
             
-        # Salva o resultado com a bounding box desenhada dentro de static/uploads/
-        # para podermos exibir a imagem processada de volta no ecran do site
         saved_image_path = None
         if len(detections) > 0:
             filename_salvo = f"res_{file.filename}"
