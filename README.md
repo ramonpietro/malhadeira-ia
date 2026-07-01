@@ -40,7 +40,7 @@ Antes de iniciar, certifique-se de possuir:
 ## 2. Clonar o repositório
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/ramonpietro/malhadeira-ia.git
 cd malhadeira
 ```
 
