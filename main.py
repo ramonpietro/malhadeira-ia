@@ -87,7 +87,6 @@ async def predict_fish(file: UploadFile = File(...)):
             filename_salvo = f"res_{file.filename}"
             full_save_path = os.path.join(OUTPUT_DIR, filename_salvo)
             result.save(filename=full_save_path)
-            # Caminho relativo para o front-end conseguir carregar via tag <img>
             saved_image_path = f"/static/uploads/{filename_salvo}"
 
         # Retorna o JSON completo para o front-end
