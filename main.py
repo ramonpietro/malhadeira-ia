@@ -9,7 +9,7 @@ from ultralytics import YOLO
 from PIL import Image
 
 app = FastAPI(
-    title="PiraCheck AI",
+    title="Malhadeira AI",
     description="Interface Web e API para reconhecimento e identificação de peixes",
     version="1.0.0"
 )
@@ -51,18 +51,11 @@ else:
 
 @app.get("/", response_class=HTMLResponse)
 async def render_home(request: Request):
-    """
-    Rota principal que renderiza e entrega a página index.html.
-    """
     return templates.TemplateResponse(request=request, name="index.html")
 
 
 @app.post("/predict")
 async def predict_fish(file: UploadFile = File(...)):
-    """
-    Endpoint otimizado para modelos YOLO de Classificação (.pt) vindo do Colab/Kaggle.
-    Processa a imagem inteira e retorna a classe com maior probabilidade.
-    """
     if not file.content_type.startswith("image/"):
         raise HTTPException(status_code=400, detail="O arquivo enviado precisa ser uma imagem válida.")
 
