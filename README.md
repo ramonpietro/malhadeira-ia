@@ -1,6 +1,6 @@
 # 🐟 Malhadeira: Reconhecimento de Espécies de Peixes
 
-O **Malhadeira** é uma plataforma inteligente para identificação automática de espécies de peixes por meio de Inteligência Artificial. A partir do envio de uma fotografia, o sistema identifica a espécie e apresenta informações relevantes, como habitat natural, distribuição geográfica e outros dados ecológicos.
+O **Malhadeira** é uma plataforma inteligente para identificação automática de espécies de peixes por meio de Inteligência Artificial. A partir do envio de uma fotografia, o sistema identifica a espécie do peixe e informa o grau de confiança da predição realizada pelo modelo.
 
 Este projeto foi desenvolvido pelos discentes **Heliny Ramos Oliveira** e **Ramon Pietro Roque dos Santos** como trabalho da disciplina de **Inteligência Artificial**.
 
@@ -9,9 +9,19 @@ Este projeto foi desenvolvido pelos discentes **Heliny Ramos Oliveira** e **Ramo
 ## Funcionalidades
 
 - Identificação automática de espécies de peixes por imagem;
+- Exibição do grau de confiança da predição realizada pelo modelo;
 - Interface web simples e intuitiva;
-- Exibição de informações ecológicas da espécie identificada;
 - Arquitetura baseada em FastAPI.
+
+---
+
+## Dataset
+
+O modelo de Inteligência Artificial foi treinado utilizando o seguinte conjunto de dados:
+
+**Dataset:** *Fish Species Image Data*
+
+**Link:** *https://www.kaggle.com/datasets/sripaadsrinivasan/fish-species-image-data*
 
 ---
 
@@ -54,7 +64,7 @@ Na raiz do projeto, execute:
 python -m venv .venv
 ```
 
-Ative o ambiente virtual:
+Ative o ambiente virtual.
 
 **Windows**
 
@@ -92,13 +102,13 @@ Após a inicialização, a aplicação estará disponível em:
 
 # Estrutura do projeto
 
-```
+```text
 .
-├── static/         # Arquivos estáticos (CSS, JavaScript e imagens)
-├── templates/      # Templates HTML renderizados pelo Jinja2
-├── weights/        # Pesos dos modelos de Inteligência Artificial
-├── main.py         # Arquivo principal da aplicação
-├── requirements.txt
+├── static/          # Arquivos estáticos (CSS, JavaScript e imagens)
+├── templates/       # Templates HTML renderizados pelo Jinja2
+├── weights/         # Pesos do modelo de Inteligência Artificial
+├── main.py          # Arquivo principal da aplicação
+├── requirements.txt # Dependências do projeto
 └── README.md
 ```
 
@@ -106,13 +116,13 @@ Após a inicialização, a aplicação estará disponível em:
 
 # Arquitetura
 
-O projeto utiliza uma arquitetura web baseada em **FastAPI**, composta pelos seguintes módulos:
+O projeto utiliza uma arquitetura web baseada em **FastAPI**, organizada da seguinte forma:
 
 | Diretório | Descrição |
 |-----------|-----------|
 | **static/** | Arquivos estáticos utilizados pela interface web, como folhas de estilo, scripts e imagens. |
 | **templates/** | Templates HTML renderizados dinamicamente pelo mecanismo Jinja2. |
-| **weights/** | Armazena os pesos dos modelos de Inteligência Artificial utilizados na identificação das espécies. |
+| **weights/** | Armazena os pesos do modelo de Inteligência Artificial utilizado na identificação das espécies. |
 
 ---
 
@@ -125,4 +135,4 @@ O projeto utiliza uma arquitetura web baseada em **FastAPI**, composta pelos seg
 
 # Licença
 
-Este projeto foi desenvolvido para fins acadêmicos como parte da disciplina de Inteligência Artificial.
+Este projeto foi desenvolvido para fins acadêmicos como parte da disciplina de **Inteligência Artificial**.

@@ -194,6 +194,23 @@ body {
     margin-bottom: 15px;
 }
 
+.result-media {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+.result-media img {
+    width: 50%;         /* Força a imagem a ocupar no máximo a largura do contêiner */
+    height: auto;        /* Mantém a proporção original (aspect ratio) para não achatar o peixe */
+    max-height: 400px;   /* Evita que imagens muito verticais fiquem gigantes para baixo */
+    object-fit: contain; /* Se a imagem for menor ou maior, ela se ajusta sem cortar as bordas */
+    border-radius: 8px;  /* Deixa as bordas levemente arredondadas para combinar com o layout */
+    background-color: #f8f9fa; /* Um fundo neutro caso a imagem tenha transparência */
+}
+
 .divider {
     border: 0;
     height: 1px;

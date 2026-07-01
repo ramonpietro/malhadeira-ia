@@ -1,0 +1,14 @@
+{
+    "fish": {
+        "habitat": "Ambientes aquáticos gerais (Modo de Teste do YOLO).",
+        "distribuicao": "Global (Modelo de testes padrão)."
+    },
+    "tambaqui": {
+        "habitat": "Florestas inundadas (igapós e várzeas) e rios principais durante a seca.",
+        "distribuicao": "Bacia Amazônica, muito comum na região do Baixo Amazonas."
+    },
+    "pirarucu": {
+        "habitat": "Lagos de várzea e ambientes de águas calmas.",
+        "distribuicao": "Planície amazônica e tributários."
+    }
+}
