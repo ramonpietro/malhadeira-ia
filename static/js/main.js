@@ -118,9 +118,17 @@ document.addEventListener("DOMContentLoaded", () => {
             if (fishHabitat) fishHabitat.textContent = principalDetecao.habitat;
             if (fishGeo) fishGeo.textContent = principalDetecao.distribuicao;
 
-            const confianca = principalDetecao.confianca;
-            confidenceText.textContent = `${confianca}%`;
-            confidenceBar.style.width = `${confianca}%`;
+            let confiancaBruta = principalDetecao.confianca;
+            let confiancaFormatada;
+
+            if (confiancaBruta <= 1) {
+                confiancaFormatada = (confiancaBruta * 100).toFixed(1);
+            } else {
+                confiancaFormatada = parseFloat(confiancaBruta).toFixed(1);
+            }
+
+            confidenceText.textContent = `${confiancaFormatada}%`;
+            confidenceBar.style.width = `${confiancaFormatada}%`;
             
             resultImage.src = `${data.imagem_processada}?t=${new Date().getTime()}`;
         } else {
